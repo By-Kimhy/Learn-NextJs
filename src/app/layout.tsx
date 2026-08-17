@@ -1,5 +1,8 @@
 export const metadata = {
-  title: "Home",
+  title: {
+    default: "Next.js App",
+    template: "%s | Codevolution",
+  },
   description: "General description",
 };
 
