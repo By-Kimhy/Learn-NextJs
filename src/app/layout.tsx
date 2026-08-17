@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Learn NextJs",
+  title: "Home",
   description: "General description",
 };
 
