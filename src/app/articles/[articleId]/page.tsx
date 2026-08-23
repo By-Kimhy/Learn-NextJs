@@ -1,18 +1,21 @@
+"use client";
 import Link from "next/link";
-export default async function ArticleDetails({
+import {use} from "react";
+
+export default function ArticleDetails({
   params,
   searchParams,
 }: {
   params: Promise<{ articleId: string }>;
   searchParams: Promise<{lang?: "en"|"fr"|"es"}>;
 }) {
-    const { articleId } = await params;
-    const {lang="en"} = await searchParams;
+    const { articleId } = use(params);
+    const {lang="en"} = use(searchParams);
   return (
     
     <div>
-      <h1>News Article id</h1>
-      <p>Reading in language</p>
+      <h1>News Article {articleId}</h1>
+      <p>Reading in {lang}</p>
 
       <div>
         <Link href={`/articles/${articleId}?lang=en`}>English</Link>
