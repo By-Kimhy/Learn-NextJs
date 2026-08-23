@@ -1,4 +1,7 @@
-export const metadata = {
+import { Metadata } from "next";
+import { ErrorWrapper } from "./error-wrapper";
+
+export const metadata:Metadata = {
   title: {
     default: "Next.js App",
     template: "%s | Codevolution",
@@ -14,20 +17,24 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <header style={{ 
-          backgroundColor: "#007bff", 
-          color: "white",
-          textAlign: "center",
-          padding: "10px"
-        }}>
+        <header
+          style={{
+            backgroundColor: "#007bff",
+            color: "white",
+            textAlign: "center",
+            padding: "10px",
+          }}
+        >
           <p>Header</p>
         </header>
-        {children}
-        <footer style={{ 
-          backgroundColor: "yellow",
-          textAlign: "center",
-          padding: "10px"
-        }}>
+        <ErrorWrapper>{children}</ErrorWrapper>
+        <footer
+          style={{
+            backgroundColor: "yellow",
+            textAlign: "center",
+            padding: "10px",
+          }}
+        >
           <p>Footer</p>
         </footer>
       </body>
